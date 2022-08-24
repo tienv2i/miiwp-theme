@@ -1,0 +1,27 @@
+@import "bscore_variables";
+//@import "bootstrap/bootstrap";
+@import "~bootstrap/scss/bootstrap";
+
+@import "bscore_style";
+//@import "bscore_woocommerce"; // Remove comments to activate WooCommerce styles
+@import "bscore_custom";
+
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+a {
+    text-decoration: none;
+}
+
+section.widget {
+    ul, ol {
+        @extend .list-group;
+        li {
+            @extend .list-group-item;
+        }
+    }
+    
+}
