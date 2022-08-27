@@ -13,6 +13,14 @@
 //require get_template_directory() . '/woocommerce/woocommerce-functions.php';
 // WooCommerce END
 
+add_filter('upload_mimes', 'add_custom_upload_mimes');
+function add_custom_upload_mimes( $existing_mimes ){
+  $existing_mimes['zip']  = 'application/zip';
+  $existing_mimes['swf']  = 'application/x-shockwave-flash';
+  $existing_mimes['rtf']  = 'text/richtext';
+  $existing_mimes['tiff'] = 'image/tiff';
+  return $existing_mimes;
+}
 
 // Register Bootstrap 5 Nav Walker
 if (!function_exists('register_navwalker')) :

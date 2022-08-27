@@ -32,15 +32,14 @@ the_post();
     <div class="row">
       <div class="col-md-8 col-xxl-9 border-end border-start">
 
-
+        <?php if (has_post_thumbnail()): ?>
           <header class="entry-header py-4 text-center">
-
             <!-- Featured Image-->
             <?php bootscore_post_thumbnail(); ?>
             <!-- .entry-header -->
           </header>
-
-          <div class="entry-content">
+        <?php endif; ?>
+          <div class="entry-content py-3">
             <!-- Content -->
             <?php the_content(); ?>
             <!-- .entry-content -->

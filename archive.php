@@ -11,31 +11,25 @@
 get_header();
 ?>
 
-<div id="content" class="site-content container py-5 mt-5">
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
-
     <!-- Hook to add something nice -->
     <?php bs_after_primary(); ?>
-
-    <div class="row">
-      <div class="col">
-
-        <main id="main" class="site-main">
-
-          <!-- Title & Description -->
-          <header class="page-header mb-4">
-            <h1><?php the_archive_title(); ?></h1>
-            <?php the_archive_description('<div class="archive-description">', '</div>'); ?>
-          </header>
-
+    <header class="page-header border-bottom text-center py-4">
+        <h1><?php the_archive_title(); ?></h1>
+        <?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+    </header>
+    <main id="main" class="site-main container">
+      <div class="row">
+        <div class="col border-start border-end py-3">
           <!-- Grid Layout -->
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-              <div class="card horizontal mb-4">
+              <div class="card horizontal mb-4 rounded-0 border-0 border-bottom">
                 <div class="row">
                   <!-- Featured Image-->
                   <?php if (has_post_thumbnail())
-                    echo '<div class="card-img-left-md col-lg-5">' . get_the_post_thumbnail(null, 'medium') . '</div>';
+                    echo '<div class="card-img-left-md col-lg-5">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
                   ?>
                   <div class="col">
                     <div class="card-body">
@@ -77,13 +71,11 @@ get_header();
             <?php bootscore_pagination(); ?>
           </div>
 
-        </main><!-- #main -->
+          </div><!-- col -->
 
-      </div><!-- col -->
-
-      <?php get_sidebar(); ?>
-    </div><!-- row -->
-
+        <?php get_sidebar(); ?>
+      </div><!-- row -->
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div><!-- #content -->
 

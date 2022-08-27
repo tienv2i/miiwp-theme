@@ -32,7 +32,7 @@ get_header();
 
     <!-- Sticky Post -->
       <?php if (is_sticky() && is_home() && !is_paged()) : ?>
-        <div class="row">
+        <div class="row py-3">
           <div class="col">
             <?php
             $args = array(
@@ -48,7 +48,7 @@ get_header();
                     <div class="row">
                       <!-- Featured Image-->
                       <?php if (has_post_thumbnail())
-                        echo '<div class="card-img-left col-md-6 col-lg-4 rouded-0">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
+                        echo '<div class="card-img-left col-md-6 col-lg-4 rouded-0 border-bottom">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
                       ?>
                       <div class="col">
                         <div class="card-body">
@@ -101,17 +101,17 @@ get_header();
       <?php endif; ?>
       <!-- Post List -->
       <div class="row">
-        <div class="col col-md-8 col-xxl-9 border-start border-end">
+        <div class="col col-md-8 col-xxl-9 py-3 border-start border-end">
           <!-- Grid Layout -->
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <?php if (is_sticky()) continue; //ignore sticky posts
               ?>
-              <div class="card horizontal mb-4 border-0 rouded-0">
+              <div class="card horizontal mb-4 border-0 rounded-0 border-bottom">
                 <div class="row">
                   <!-- Featured Image-->
                   <?php if (has_post_thumbnail())
-                    echo '<div class="card-img-left-md col-lg-5 rouded-0">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
+                    echo '<div class="card-img-left-md col-lg-5 rounded-0">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
                   ?>
                   <div class="col">
                     <div class="card-body">
