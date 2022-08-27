@@ -99,7 +99,7 @@ if (!function_exists('miiwp_setup')) :
     ]);
   }
 endif;
-add_action('after_setup_theme', 'miiwp-setup');
+add_action('after_setup_theme', 'miiwp_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
