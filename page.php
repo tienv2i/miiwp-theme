@@ -14,23 +14,27 @@
  */
 
 get_header();
+the_post();
 ?>
 
-<div id="content" class="site-content container py-5 mt-5">
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
 
     <!-- Hook to add something nice -->
     <?php bs_after_primary(); ?>
 
+    <header class="text-center py-4 border-bottom">
+      <!-- Title -->
+      <?php the_title('<h1>', '</h1>'); ?>
+
+    </header>
+    <main id="main" class="site-main container">
     <div class="row">
-      <div class="col-md-8 col-xxl-9">
+      <div class="col-md-8 col-xxl-9 border-end border-start">
 
-        <main id="main" class="site-main">
 
-          <header class="entry-header">
-            <?php the_post(); ?>
-            <!-- Title -->
-            <?php the_title('<h1>', '</h1>'); ?>
+          <header class="entry-header py-4 text-center">
+
             <!-- Featured Image-->
             <?php bootscore_post_thumbnail(); ?>
             <!-- .entry-header -->
@@ -53,12 +57,10 @@ get_header();
           <!-- Comments -->
           <?php comments_template(); ?>
 
-        </main><!-- #main -->
-
       </div><!-- col -->
       <?php get_sidebar(); ?>
     </div><!-- row -->
-
+  </main>
   </div><!-- #primary -->
 </div><!-- #content -->
 

@@ -38,7 +38,7 @@ add_action('after_setup_theme', 'register_comment_list');
 // Register Comment List END
 
 
-if (!function_exists('bootscore_setup')) :
+if (!function_exists('miiwp_setup')) :
   /**
    * Sets up theme defaults and registers support for various WordPress features.
    *
@@ -46,7 +46,7 @@ if (!function_exists('bootscore_setup')) :
    * runs before the init hook. The init hook is too late for some features, such
    * as indicating support for post thumbnails.
    */
-  function bootscore_setup() {
+  function  miiwp_setup() {
     /*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -99,7 +99,7 @@ if (!function_exists('bootscore_setup')) :
     ]);
   }
 endif;
-add_action('after_setup_theme', 'bootscore_setup');
+add_action('after_setup_theme', 'miiwp-setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -108,13 +108,13 @@ add_action('after_setup_theme', 'bootscore_setup');
  *
  * @global int $content_width
  */
-function bootscore_content_width() {
+function miiwp_content_width() {
   // This variable is intended to be overruled from themes.
   // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
   // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
   $GLOBALS['content_width'] = apply_filters('bootscore_content_width', 640);
 }
-add_action('after_setup_theme', 'bootscore_content_width', 0);
+add_action('after_setup_theme', 'miiwp_content_width', 0);
 
 
 
@@ -126,15 +126,15 @@ add_action('after_setup_theme', 'bootscore_content_width', 0);
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 // Widgets
-if (!function_exists('bootscore_widgets_init')) :
+if (!function_exists('miiwp_widgets_init')) :
 
-  function bootscore_widgets_init() {
+  function miiwp_widgets_init() {
 
     // Top Nav
     register_sidebar(array(
-      'name'          => esc_html__('Top Nav', 'bootscore'),
+      'name'          => esc_html__('Top Nav', 'miiwp'),
       'id'            => 'top-nav',
-      'description'   => esc_html__('Add widgets here.', 'bootscore'),
+      'description'   => esc_html__('Add widgets here.', 'miiwp'),
       'before_widget' => '<div class="ms-3">',
       'after_widget'  => '</div>',
       'before_title'  => '<div class="widget-title d-none">',
@@ -144,9 +144,9 @@ if (!function_exists('bootscore_widgets_init')) :
 
     // Top Nav Search
     register_sidebar(array(
-      'name'          => esc_html__('Top Nav Search', 'bootscore'),
+      'name'          => esc_html__('Top Nav Search', 'miiwp'),
       'id'            => 'top-nav-search',
-      'description'   => esc_html__('Add widgets here.', 'bootscore'),
+      'description'   => esc_html__('Add widgets here.', 'miiwp'),
       'before_widget' => '<div class="top-nav-search">',
       'after_widget'  => '</div>',
       'before_title'  => '<div class="widget-title d-none">',
@@ -239,7 +239,7 @@ if (!function_exists('bootscore_widgets_init')) :
     // 404 Page End
 
   }
-  add_action('widgets_init', 'bootscore_widgets_init');
+  add_action('widgets_init', 'miiwp_widgets_init');
 
 
 endif;
@@ -406,7 +406,7 @@ add_post_type_support('page', 'excerpt');
 if (!function_exists('the_breadcrumb')) :
   function the_breadcrumb() {
     if (!is_home()) {
-      echo '<nav class="breadcrumb mb-4 mt-2 mt-md-4 bg-light py-2 px-3 small rounded">';
+      echo '<nav class="breadcrumb mt-4 px-3 small rounded">';
       echo '<a href="' . home_url('/') . '">' . ('<i class="fa-solid fa-house"></i>') . '</a><span class="divider">&nbsp;/&nbsp;</span>';
       if (is_category() || is_single()) {
         the_category(' <span class="divider">&nbsp;/&nbsp;</span> ');

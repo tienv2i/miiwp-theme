@@ -1,0 +1,71 @@
+# Copyright (C) 2022 tienv2i
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: MiiWP Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/miiwp-theme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-08-26T08:31:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: miiwp-theme\n"
+
+#. Theme Name of the theme
+msgid "MiiWP Theme"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://huynhanhtien.com/miiwp-theme"
+msgstr ""
+
+#. Description of the theme
+msgid "Mii Wordpress Theme base on Bootscore 5.2.0"
+msgstr ""
+
+#. Author of the theme
+msgid "tienv2i"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://huynhanhtien.com"
+msgstr ""
+
+#: header.php:113
+msgid "Sidebar"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Blank with container"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Blank without container (Don't use it. Use Blank template instead. This file will be removed later)"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Blank"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width Image"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Left Sidebar"
+msgstr ""
+
+#. Template Name of the theme
+msgid "No Sidebar"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full width image"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Sidebar left"
+msgstr ""

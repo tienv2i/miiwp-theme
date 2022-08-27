@@ -37,9 +37,9 @@
 
   <div id="page" class="site">
 
-    <header id="masthead" class="site-header">
+    <header id="masthead" class="site-header border-end">
 
-      <div class="fixed-top bg-white border-bottom">
+      <div class="bg-white border-bottom">
 
         <nav id="nav-main" class="navbar navbar-expand-lg">
 

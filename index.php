@@ -15,21 +15,22 @@
 
 get_header();
 ?>
-<div id="content" class="site-content container py-5 mt-4">
+<div id="content" class="site-content">
   <div id="primary" class="content-area">
 
     <!-- Hook to add something nice -->
     <?php bs_after_primary(); ?>
+  
+    <!-- Header -->
+    <div class="py-3 py-md-5 text-center border-bottom">
+      <h1 class="display-1"><?php bloginfo('name'); ?></h1>
+      <p class="lead"><?php bloginfo('description'); ?></p>
+    </div>
 
-    <main id="main" class="site-main">
 
-      <!-- Header -->
-      <div class="py-3 py-md-5 text-center">
-        <h1 class="display-1"><?php bloginfo('name'); ?></h1>
-        <p class="lead"><?php bloginfo('description'); ?></p>
-      </div>
+    <main id="main" class="site-main container">
 
-      <!-- Sticky Post -->
+    <!-- Sticky Post -->
       <?php if (is_sticky() && is_home() && !is_paged()) : ?>
         <div class="row">
           <div class="col">
@@ -100,7 +101,7 @@ get_header();
       <?php endif; ?>
       <!-- Post List -->
       <div class="row">
-        <div class="col col-md-8 col-xxl-9 border-end">
+        <div class="col col-md-8 col-xxl-9 border-start border-end">
           <!-- Grid Layout -->
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>

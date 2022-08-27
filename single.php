@@ -5,29 +5,29 @@
 
 get_header();  ?>
 
-<div id="content" class="site-content container py-5 mt-4">
+<div id="content" class="site-content">
+  <?php the_post(); ?>
+
   <div id="primary" class="content-area">
 
     <!-- Hook to add something nice -->
-    <?php bs_after_primary(); ?>
-
-    <?php the_breadcrumb(); ?>
-
+    <header class="border-bottom pb-4">
+      <div class="container">
+        <?php bs_after_primary(); ?>
+        <?php the_breadcrumb(); ?>
+        <?php the_title('<h1 class="text-center">', '</h1>'); ?>
+      </div>
+    </header>
+    <main id="site-main" class="container border-start" >
     <div class="row">
-      <div class="col-md-8 col-xxl-9 border-end">
-
-        <main id="main" class="site-main">
-
-          <header class="entry-header">
-            <?php the_post(); ?>
-            <?php the_title('<h1>', '</h1>'); ?>
-            <?php bootscore_category_badge(); ?>
-
+      <div class="col-md-8 col-xxl-9 border-end p-4">
+          <header class="entry-header border-bottom mb-4">
+            <?php bootscore_category_badge();?>
             <p class="entry-meta">
               <small class="text-muted">
                 <?php
                 bootscore_date();
-                _e(' by ', 'bootscore');
+                _e(' by ', 'miiwp');
                 the_author_posts_link();
                 bootscore_comment_count();
                 ?>
@@ -40,7 +40,7 @@ get_header();  ?>
             <?php the_content(); ?>
           </div>
 
-          <footer class="entry-footer clear-both">
+          <footer class="entry-footer clear-both border-bottom mb-4">
             <div class="mb-4">
               <?php bootscore_tags(); ?>
             </div>
@@ -57,12 +57,10 @@ get_header();  ?>
           </footer>
 
           <?php comments_template(); ?>
-
-        </main> <!-- #main -->
-
       </div><!-- col -->
       <?php get_sidebar(); ?>
     </div><!-- row -->
+  </main>
 
   </div><!-- #primary -->
 </div><!-- #content -->
