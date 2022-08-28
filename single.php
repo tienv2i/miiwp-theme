@@ -15,13 +15,13 @@ get_header();  ?>
       <div class="container">
         <?php bs_after_primary(); ?>
         <?php the_breadcrumb(); ?>
-        <?php the_title('<h1 class="text-center">', '</h1>'); ?>
       </div>
     </header>
     <main id="site-main" class="container border-start" >
     <div class="row">
       <div class="col-md-8 col-xxl-9 border-end p-4">
           <header class="entry-header border-bottom mb-4">
+            <?php the_title('<h1>', '</h1>'); ?>
             <?php bootscore_category_badge();?>
             <p class="entry-meta">
               <small class="text-muted">

@@ -21,11 +21,18 @@ the_post();
   <div id="primary" class="content-area">
 
     <!-- Hook to add something nice -->
-    <?php bs_after_primary(); ?>
 
-    <header class="text-center py-4 border-bottom">
-      <!-- Title -->
-      <?php the_title('<h1>', '</h1>'); ?>
+
+
+
+    <header class="pb-4 border-bottom">
+      <div class="container">
+        <?php bs_after_primary(); ?>
+        <?php the_breadcrumb(); ?>
+              <!-- Title -->
+      <?php the_title('<h1 class="text-center">', '</h1>'); ?>
+    </div> <!-- end container -->
+
 
     </header>
     <main id="main" class="site-main container">

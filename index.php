@@ -22,7 +22,7 @@ get_header();
     <?php bs_after_primary(); ?>
   
     <!-- Header -->
-    <div class="py-3 py-md-5 text-center border-bottom">
+    <div class="p-3 py-md-5 text-center border-bottom">
       <h1 class="display-1"><?php bloginfo('name'); ?></h1>
       <p class="lead"><?php bloginfo('description'); ?></p>
     </div>
@@ -44,14 +44,14 @@ get_header();
             if ($the_query->have_posts()) :
               while ($the_query->have_posts()) : $the_query->the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                  <div class="card horizontal p-2 border-0 rouded-0 ">
+                  <div class="card horizontal p-3 border-0 rouded-0 ">
                     <div class="row">
                       <!-- Featured Image-->
                       <?php if (has_post_thumbnail())
-                        echo '<div class="card-img-left col-md-6 col-lg-4 rouded-0 border-bottom">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
+                        echo '<div class="card-img-left col-md-6 col-lg-4 rouded-0 border-bottom p-0">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
                       ?>
                       <div class="col">
-                        <div class="card-body">
+                        <div class="card-body p-0">
                           <div class="row mb-2">
                             <div class="col-10">
                               <?php bootscore_category_badge(); ?>
@@ -107,14 +107,14 @@ get_header();
             <?php while (have_posts()) : the_post(); ?>
               <?php if (is_sticky()) continue; //ignore sticky posts
               ?>
-              <div class="card horizontal p-2 border-0 rounded-0 border-bottom">
+              <div class="card horizontal p-3 border-0 rounded-0 border-bottom">
                 <div class="row">
                   <!-- Featured Image-->
                   <?php if (has_post_thumbnail())
-                    echo '<div class="card-img-left-md col-lg-5 rounded-0">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
+                    echo '<div class="card-img-left-md col-lg-5 rounded-0 p-0">' . get_the_post_thumbnail(null, 'medium', ['class' => 'rounded-0']) . '</div>';
                   ?>
                   <div class="col">
-                    <div class="card-body">
+                    <div class="card-body p-0">
                       <!-- Title -->
                       <h2 class="blog-post-title">
                         <a href="<?php the_permalink(); ?>">
