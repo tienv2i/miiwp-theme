@@ -32,7 +32,7 @@ get_header();
 
     <!-- Sticky Post -->
       <?php if (is_sticky() && is_home() && !is_paged()) : ?>
-        <div class="row py-3">
+        <div class="row">
           <div class="col">
             <?php
             $args = array(
@@ -44,7 +44,7 @@ get_header();
             if ($the_query->have_posts()) :
               while ($the_query->have_posts()) : $the_query->the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                  <div class="card horizontal mb-4 border-0 rouded-0">
+                  <div class="card horizontal p-4 border-0 rouded-0 ">
                     <div class="row">
                       <!-- Featured Image-->
                       <?php if (has_post_thumbnail())
@@ -101,13 +101,13 @@ get_header();
       <?php endif; ?>
       <!-- Post List -->
       <div class="row">
-        <div class="col col-md-8 col-xxl-9 py-3 border-start border-end">
+        <div class="col col-md-8 col-xxl-9 border-start border-end">
           <!-- Grid Layout -->
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <?php if (is_sticky()) continue; //ignore sticky posts
               ?>
-              <div class="card horizontal mb-4 border-0 rounded-0 border-bottom">
+              <div class="card horizontal p-4 border-0 rounded-0 border-bottom">
                 <div class="row">
                   <!-- Featured Image-->
                   <?php if (has_post_thumbnail())
