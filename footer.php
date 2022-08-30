@@ -98,7 +98,8 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9447431413952512"
+     crossorigin="anonymous"></script>
 </body>
 
 </html>
