@@ -37,7 +37,7 @@
 
   <div id="page" class="site">
 
-    <header id="masthead" class="site-header border-end">
+    <header id="masthead" class="site-header">
 
       <div class="bg-white border-bottom">
 
@@ -46,15 +46,20 @@
           <div class="container">
 
             <!-- Navbar Brand -->
-            <a class="navbar-brand d-flex d-md-none align-items-center"  href="<?php echo esc_url(home_url()); ?>">
-              <img src="<?php miiwp_custom_logo_url(); ?>" alt="<?php bloginfo('name'); ?>" class="logo" width="40">
-            </a>
-
-            <a class="navbar-brand d-none d-md-flex align-items-center"  href="<?php echo esc_url(home_url()); ?>">
-              <img src="<?php miiwp_custom_logo_url(); ?>" alt="<?php bloginfo('name'); ?>" class="logo" width="60">
-              <span class="fs-3 px-2 d-flex"><?php bloginfo('name'); ?></span>
-            </a>
-
+            <?php if (has_custom_logo( )): ?>
+              <a class="navbar-brand d-flex d-md-none align-items-center"  href="<?php echo esc_url(home_url()); ?>">
+                <img src="<?php miiwp_custom_logo_url(); ?>" alt="<?php bloginfo('name'); ?>" class="logo" width="40">
+              </a>
+              
+              <a class="navbar-brand d-none d-md-flex align-items-center"  href="<?php echo esc_url(home_url()); ?>">
+                <img src="<?php miiwp_custom_logo_url(); ?>" alt="<?php bloginfo('name'); ?>" class="logo" width="60">
+                <span class="fs-3 px-2 d-flex"><?php bloginfo('name'); ?></span>
+              </a>
+            <?php else: ?>
+              <a class="navbar-brand d-none d-md-flex align-items-center"  href="<?php echo esc_url(home_url()); ?>">
+                <span class="fs-3 px-2 d-flex"><?php bloginfo('name'); ?></span>
+              </a>
+            <?php endif; ?>
             <!-- Offcanvas Navbar -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-navbar">
               <div class="offcanvas-header bg-light">
